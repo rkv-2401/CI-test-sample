@@ -8,7 +8,9 @@ class Buying(unittest.TestCase):
     def test_buy_takes_cost_and_fee(self):
         p = Portfolio(1000, fee=2)
         p.buy("ACME", 10, 50)
-        self.assertEqual(p.cash, 498)
+        # self.assertEqual(p.cash, 498)
+        # Intentionally fail a test
+        self.assertEqual(p.cash, 600)
         self.assertEqual(p.shares("ACME"), 10)
 
     def test_cannot_overspend(self):
